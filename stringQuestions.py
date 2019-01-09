@@ -1,3 +1,5 @@
+import string
+
 # 1
 print('one' 'two')
 # output
@@ -101,7 +103,85 @@ print(cen.center(40,'@'))
 # @@@@@@@@@@@@@@@@example@@@@@@@@@@@@@@@@@
 # length is 40, the string is at the center, '@' is the padding at the front and rear of the string
 
-print((75+85+75)/3)
 
+# 12
+print(string.ascii_letters)
+# output
+# abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.ascii_lowercase)
+# abcdefghijklmnopqrstuvwxyz
+print(string.ascii_uppercase)
+# ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
+# 13
+print(cen[:-1])
+# exampl
+print(cen[-1])
+# e
+print(cen[-1:])
+# e
 
+# 14
+print(0xA + 0xB + 0xC)# 0x, hex numbers, 10 + 11 + 12 = 33
+
+# 15
+class father:
+    def __init__(self, param):
+        self.o1 = param
+
+    def getO1(self):
+        return self.o1
+
+class child(father):
+    def __init__(self, param):
+        father.__init__(self, param)
+        self.o2 = param
+
+obj = child(22)
+print(obj.getO1())
+print ("%d %d" % (obj.o1, obj.o2))
+# AttributeError: 'child' object has no attribute 'o1'
+
+# 16
+class Person:
+
+    def __init__(self, first, last):
+        self.firstname = first
+        self.lastname = last
+
+    def Name(self):
+        return self.firstname + " " + self.lastname
+
+class Employee(Person):
+
+    def __init__(self, first, last, staffnum):
+        Person.__init__(self,first, last)
+        self.staffnumber = staffnum
+
+    def GetEmployee(self):
+        return self.Name() + ", " +  self.staffnumber
+
+x = Person("Marge", "Simpson")
+y = Employee("Homer", "Simpson", "1007")
+
+print(x.Name())
+print(y.GetEmployee())
+print(y.Name())
+
+# 17
+print(cen.count('l'))
+# output
+# 1
+
+# 18
+print(max(cen))
+# output
+# x
+
+# 18
+print(chr(ord('A')))# A
+print(ord('A'))# 65 get the ascii code for a digit
+print(chr(65))# A, use the ascii value to get the digit
+
+# 19
+print(format("Welcome", "20s"), end = '#')
